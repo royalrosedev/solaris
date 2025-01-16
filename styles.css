@@ -44,7 +44,26 @@ h1 {
     font-weight: 600
 }
 
+.flex {
+    display: flex;
 
+  
+}
+
+body.problem:not(.header-transparent) > section:first-of-type {
+    margin-top: 8rem;
+}
+
+.problem .flex {
+    padding: var(--content-padding);
+    column-gap: 4em;
+}
+
+.flex img {
+    height: 20em;
+    object-fit: cover;
+    width: 100%;
+}
 
 header {
     display: flex;
@@ -158,6 +177,7 @@ section.hero {
     margin: 0;
 }
 
+
 section.hero .text {
     position: relative;
     font-size: 3.5em;
@@ -206,7 +226,71 @@ button,
 
 cursor: pointer;
 transition: background-position 0.3s;
+position: relative;
 }
+
+.flex-w-image {
+    display: flex;
+    column-gap: 3rem;
+}
+
+.flex-w-image h2 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  
+}
+
+.list-margin li {
+    margin-bottom: .5rem;
+}
+.model {
+    width: 550;
+    height: 407;
+    position: relative;
+}
+.model canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+    z-index: 2;
+}
+
+.flex-w-image h2::after {
+    --size: 2rem;
+    content: '';
+    background-image: url(/content/star.svg);
+    background-size: cover;
+    
+    width: var(--size);
+    height: var(--size);
+  
+    filter: brightness(0.1);
+   
+}
+
+.flex-w-image model-viewer {
+    width: 100%;
+    height: auto;
+}
+
+/* .button::after, button::after {
+    content: '';
+    display: block;
+    width: .2em;
+    height: 100%;
+    position: absolute;
+    background-color: var(--background-light);
+    left: calc(100% + .1em);
+    bottom: 0;
+} */
+
+
 
 
 
@@ -218,17 +302,92 @@ button:hover {
     color: var(--text-light);
 }
 
+.procons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+   
+   
+}
+
+.procons > div:first-child {
+  
+    padding-right: 4rem;
+    margin-right: 4rem;
+}
+
+/* .procons::after {
+    --size: 3rem;
+    content: '';
+    background-image: url(/content/star.svg);
+    background-size: cover;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    right: calc(50% - var(--size) / 2);
+    top: calc(50% - var(--size) / 2);
+    fill: var(--background-dark);
+    outline: var(--background-dark);
+    filter: brightness(0);
+} */
+
+.procons > div h4 {
+    text-align: left;
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+
+.procons ul {
+    padding: 0;
+}
+
+.w-icon {
+    display: flex;
+    align-items: center;
+}
+.w-icon span {
+    margin-right: .5em;
+}
+
+.procons .w-icon {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
 section.headings-w-paragraph-side {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--content-padding);
     column-gap: 1.5rem;
+    align-items: end;
 }
 
-section.headings-w-paragraph-side .heading {
+.problem .flex > section {
+    padding: 0;
+}
+
+section.headings-w-paragraph-side .heading, section.headings-w-paragraph .heading {
     font-weight: 300;
     font-size: 2rem;
+}
+
+section.pro-cons {
+    text-align: center;
+    min-width: max-content;
+    margin-bottom: 7em;
+}
+
+.problem h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+}
+section .heading {
+    min-width: max-content;
 }
 
 section.headings-w-paragraph-side div {
@@ -247,6 +406,29 @@ section.headings-w-paragraph-side div::after {
     z-index: 5;
     
 }
+
+section.headings-w-paragraph-side.alternate-style {
+    outline: 1px solid var(--background-dark);
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+
+}
+
+section.headings-w-paragraph-side.alternate-style .appended-header {
+    background-color: var(--background-light);
+    z-index: 2;
+    bottom: 100%;
+    margin: 0;
+    left: 7rem;
+    padding: .8rem 1em;
+    border: 1px solid var(--background-dark);
+    border-bottom: 0;
+    outline-offset: 5px;
+   
+}
+
+
+
 
 section.paragraph-w-image {
     display: flex;
@@ -277,6 +459,33 @@ section.over-image {
     margin: 0;
 }
 
+model-viewer {
+    background-color: var(--background-dark);
+}
+
+.transition {
+    font-size: 1rem;
+    text-align: center;
+}
+.transition * {
+    margin: 0;
+}
+.transition .subtext {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: .5rem;
+}
+
+section.improvements {
+    display: flex;
+    column-gap: 1rem;
+}
+
+section.improvements h2 {
+    font-weight: 300;
+}
+
 .home .over-image h2 {
     font-size: 3rem;
     margin-bottom: 0;
@@ -291,13 +500,13 @@ section.over-image {
     border-left: 2px solid var(--text-light);
 }
 
-.about h1 {
+section.big-page-header-paragraph h1 {
     position: relative;
     font-size: 4em;
-    border-bottom: 3px solid;
+    border-bottom: 1px solid;
 }
 
-.about h1::after {
+section.big-page-header-paragraph h1::after {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -310,6 +519,15 @@ section.over-image {
     
 }
 
+.problem .window-image {
+    margin: 0;
+    width: 100%;
+    height: 15em;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
 section.window-image {
     width: 100%;
     box-sizing: border-box;
@@ -319,7 +537,7 @@ section.window-image {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-section.window-image img {
+section.window-image img, section.window-image model-viewer {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -343,9 +561,47 @@ section.black {
 }
 
 section.page {
+    position: relative;
     margin: var(--content-padding);
     padding: 3rem 4rem;
     background-color: white;
+    line-height: 1.8rem;
+}
+section:has(.appended-header) {
+    position: relative;
+}
+section .appended-header {
+    position: absolute;
+    bottom: 110%;
+    
+}
+
+.problem h2 {
+    font-weight: 600;
+}
+.problem h4 {
+    font-weight: 300;
+}
+
+section.page:has(.cover) {
+    padding-top: 12em;
+    margin-top: 1em;
+}
+
+section.page-margins {
+    margin: 4em 18em
+}
+
+section.page .cover {
+    border-radius: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: lightgray;
 }
 
 section.quick-links {
@@ -354,7 +610,7 @@ section.quick-links {
 }
 
 section.diagram {
-    background-image: url('content/space.jpg');
+    
     background-size: cover;
     height: 80vh;
     color: var(--text-light);
@@ -364,14 +620,30 @@ section.diagram {
    
    
 }
+section.diagram::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: .95; 
+    z-index: -1;
+    background-image: url('content/space.jpg');
+    background-size: cover;
+  }
 
 section.diagram *:not(canvas) {
     position: relative;
     z-index: 2;
 }
 
+.problem h1 {
+    text-transform: uppercase;
+}
+
 section.diagram h1 {
-    border-bottom: 2px solid ;
+    border-bottom: 1px solid ;
     margin: 0;
 }
 
@@ -383,6 +655,7 @@ section.diagram h1::after {
     display: block;
     width: 8rem;
     height: 3.2rem;
+    
     background-color: var(--background-light);
     z-index: 5;
     
@@ -401,6 +674,10 @@ section.diagram canvas {
   
     
   
+}
+
+section .inverse {
+    color: var(--text-light);
 }
 
 
