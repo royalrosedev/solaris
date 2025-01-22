@@ -6,7 +6,7 @@
     --border-color: #ccc;
     --link-color: #007BFF;
     --link-color-hover: #0056b3;
-    --primary-color: #007BFF;
+    --primary-color: #00264e;
     --content-padding: 0 10rem;
 }
 
@@ -704,7 +704,32 @@ section .inverse {
 
 
 
+.cons .flex i {
+    padding-right: 1rem;
+    font-size: 4rem;
+    float: right;
+    color: var(--primary-color);
+}
 
+
+
+
+
+.home .home-link::after {
+    width: 100% !important;
+}
+.about .about-link::after {
+    width: 100% !important;
+}
+.diagram .diagram-link::after {
+    width: 100% !important;
+}
+.cons .cons-link::after {
+    width: 100% !important;
+}
+.problem .problems-link::after {
+    width: 100% !important;
+}
 
 
 
@@ -726,6 +751,12 @@ section .inverse {
     height: 15em;
     width: 15em;
     position: relative;
+}
+.cons section:first-of-type {
+    padding-top: 4rem;
+}
+.cons .flex {
+    column-gap: 2rem;
 }
 
 .image-buttons-w-text .caption {
