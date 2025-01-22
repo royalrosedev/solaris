@@ -206,6 +206,7 @@ section.hero .text svg {
 
 button,
 .button {
+    display: inline-block;
     background-color: var(--background-light);
     color: var(--text-dark);
     font-size: 1rem;
@@ -259,6 +260,26 @@ position: relative;
     top: 0;
    
     z-index: 2;
+}
+.diagram .page {
+  
+    
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+.flex-center {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3rem;
+}
+.diagram .page img {
+    width: 70%;
+ 
+    height: 20em;
+    object-fit: cover;
 }
 
 .flex-w-image h2::after {
@@ -727,7 +748,7 @@ section .inverse {
    
 }
 
-.image-buttons-w-text button {
+.image-buttons-w-text button, .image-buttons-w-text .button {
     position: relative;
     z-index: 1;
 }
